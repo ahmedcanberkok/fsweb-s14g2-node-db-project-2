@@ -19,8 +19,12 @@ router.get("/:id",mw.checkCarId,(req,res,next) => {
     }
 });
 
-router.post("/",(req,res,next) => {
-
+router.post("/",mw.checkCarPayload,mw.checkVinNumberValid,mw.checkVinNumberUnique, async (req,res,next) => {
+    try {
+        const insertedCar = await carsModel.create(req.body);
+    } catch (error) {
+        next(error);
+    }
 });
 
 module.exports = router ;
