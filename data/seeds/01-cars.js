@@ -34,6 +34,12 @@
             model: "Clio",
             mileage: 1234
         },
+        {
+            vin: "12345678",
+            make: "Renault",
+            model: "Megane",
+            mileage: 1234
+        },
     ];
 
 exports.seed = async function(knex) {
