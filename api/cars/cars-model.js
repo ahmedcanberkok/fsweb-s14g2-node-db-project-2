@@ -7,7 +7,11 @@ const getAll = () => {
 
 const getById = (carId) => {
   // HOKUS POKUS
-  return db("cars").where("id",carId).first()
+  return db("cars").where("id",carId).first();
+}
+
+const getByVin = (vin) => {
+  return db("cars").where("vin",vin).first();
 }
 
 const create = async (carEntity) => {
@@ -20,5 +24,6 @@ const create = async (carEntity) => {
 module.exports = {
   getAll,
   getById,
-  create
+  create,
+  getByVin
 }
